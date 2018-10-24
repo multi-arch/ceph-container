@@ -30,6 +30,7 @@ TAG_REGISTRY ?= ceph
 # Could be overrided by user at build time
 RELEASE ?= $(shell git rev-parse --abbrev-ref HEAD)
 
+CLIENT_TAG ?= ""
 DAEMON_BASE_TAG ?= ""
 DAEMON_TAG ?= ""
 
@@ -184,6 +185,7 @@ ADVANCED OPTIONS:
                  If specified as empty string, no registry will be prepended to the tag.
                  e.g., TAG_REGISTRY="myreg" tags images "myreg/daemon{,-base}" & pushes to "myreg".
 
+  CLIENT_TAG      - Override the tag name for the client image.
   DAEMON_BASE_TAG - Override the tag name for the daemon-base image.
   DAEMON_TAG      - Override the tag name for the daemon image.
     For tags above, the final image tag will include the registry defined by "TAG_REGISTRY".
