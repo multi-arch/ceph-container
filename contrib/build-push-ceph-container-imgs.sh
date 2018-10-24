@@ -169,7 +169,7 @@ function push_ceph_imgs_latests {
     else
       latest_name="latest-$release"
     fi
-    for i in daemon-base daemon; do
+    for i in client daemon-base daemon; do
       tag=ceph/$i:${BRANCH}-${LATEST_COMMIT_SHA}-$release-centos-7-${HOST_ARCH}
       # tag image
       docker tag "$tag" ceph/$i:"$latest_name"
@@ -196,7 +196,7 @@ function create_registry_manifest {
   enable_experimental_docker_cli
   # This should normally work, by the time we get here the arm64 image should have been built and pushed
   # IIRC docker manisfest will fail if the image does not exist
-  for image in daemon-base daemon; do
+  for image in client daemon-base daemon; do
     for ceph_release in luminous mimic; do
       docker manifest create ceph/"$image":"$RELEASE"-"$ceph_release"-centos-7 ceph/"$image":"$RELEASE"-"$ceph_release"-centos-7-x86_64 ceph/"$image":"$RELEASE"-"$ceph_release"-centos-7-aarch64
       docker manifest push ceph/"$image":"$RELEASE"-"$ceph_release"-centos-7
