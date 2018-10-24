@@ -1,0 +1,12 @@
+RUN sed -i 's/enabled=.*/enabled=0/g' /etc/yum/pluginconf.d/subscription-manager.conf
+
+# Atomic specific labels
+LABEL version=3
+
+# Build specific labels
+LABEL com.redhat.component="rhceph-client-rhel7-container"
+LABEL name="rhceph-client"
+LABEL description="Red Hat Ceph Storage 3 Client"
+LABEL summary="Provides the latest Red Hat Ceph Storage 3 Client on RHEL 7 in a fully featured and supported base image."
+LABEL io.k8s.display-name="Red Hat Ceph Storage 3 Client on RHEL 7"
+LABEL io.openshift.tags="rhceph ceph"
