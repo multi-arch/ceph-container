@@ -1,6 +1,6 @@
 # Container images built for each flavor
 # Can be overridden, but don't change the ordering, because the images are built atop each other
-IMAGES_TO_BUILD ?= daemon-base daemon
+IMAGES_TO_BUILD := client daemon-base daemon
 
 HOST_ARCH ?= $(shell uname --machine)
 
@@ -29,6 +29,11 @@ $(shell bash -c 'set -eu ; \
 	set_var IMAGES_TO_BUILD    "$(IMAGES_TO_BUILD)" ; \
 	set_var STAGING_DIR        "staging/$$CEPH_VERSION$$CEPH_POINT_RELEASE-$$DISTRO-$$DISTRO_VERSION-$$HOST_ARCH" ; \
 	set_var RELEASE            "$(RELEASE)" ; \
+	\
+	client_img="$$(val_or_default "$(CLIENT_TAG)" \
+		"client:$(RELEASE)-$$CEPH_VERSION-$$BASEOS_REPO-$$BASEOS_TAG-$$HOST_ARCH")" ; \
+	if [ -n "$(TAG_REGISTRY)" ]; then client_img="$(TAG_REGISTRY)/$$client_img" ; fi ; \
+	set_var CLIENT_IMAGE  "$$client_img" ; \
 	\
 	daemon_base_img="$$(val_or_default "$(DAEMON_BASE_TAG)" \
 		"daemon-base:$(RELEASE)-$$CEPH_VERSION-$$BASEOS_REPO-$$BASEOS_TAG-$$HOST_ARCH")" ; \
