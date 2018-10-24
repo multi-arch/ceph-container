@@ -3,6 +3,20 @@ Source version info:  repo [testrepo] - branch [testbranch] - commit hash [testh
 
 <staged file>                                                                     <-   <source file> (preceding * indicates file is modified in git without a commit)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+client/__DO_STUFF__                                                               <-   tests/stage-test/ceph-releases/ALL/centos/7/client/__DO_STUFF__
+client/__EMPTY__                                                                  <-   tests/stage-test/src/client/__EMPTY__
+client/__H4X0R__                                                                  <-   tests/stage-test/src/client/__H4X0R__
+client/__MAINTAINER__                                                             <-   tests/stage-test/ceph-releases/ALL/centos/__MAINTAINER__
+client/__OS_CODENAME__                                                            <-   tests/stage-test/ceph-releases/ALL/centos/7/__OS_CODENAME__
+client/centos-mimic-override                                                      <-   tests/stage-test/ceph-releases/luminous/centos/7/centos-mimic-override
+client/l-client-test-file                                                         <-   tests/stage-test/ceph-releases/luminous/client/l-client-test-file
+client/l-test-file                                                                <-   tests/stage-test/ceph-releases/luminous/l-test-file
+client/lu-client-test-file                                                        <-   tests/stage-test/ceph-releases/luminous/centos/client/lu-client-test-file
+client/lu-test-file                                                               <-   tests/stage-test/ceph-releases/luminous/centos/lu-test-file
+client/lum-client-test-file                                                       <-   tests/stage-test/ceph-releases/luminous/centos/7/client/lum-client-test-file
+client/lum-test-file                                                              <-   tests/stage-test/ceph-releases/luminous/centos/7/lum-test-file
+client/required-env-vars                                                          <-   tests/stage-test/src/required-env-vars
+client/src-client-test-file                                                       <-   tests/stage-test/src/client/src-client-test-file
 daemon-base/__DO_STUFF__                                                          <-   tests/stage-test/ceph-releases/ALL/centos/7/daemon-base/__DO_STUFF__
 daemon-base/__EMPTY__                                                             <-   tests/stage-test/src/daemon-base/__EMPTY__
 daemon-base/__H4X0R__                                                             <-   tests/stage-test/src/daemon-base/__H4X0R__
