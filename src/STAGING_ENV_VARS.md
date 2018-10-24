@@ -13,6 +13,7 @@ See `ceph-container/maint-lib/stagelib/envglobals.py` for most updated list and 
  - IMAGES_TO_BUILD
  - STAGING_DIR
  - RELEASE
+ - CLIENT_IMAGE
  - DAEMON_BASE_IMAGE
  - DAEMON_IMAGE
 
