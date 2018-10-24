@@ -13,6 +13,7 @@ Find available container image tags
 -----------------------------------
 
 All tags can be found on the Docker Hub.
+For the client tags [visit](https://hub.docker.com/r/ceph/client/tags/).
 For the daemon-base tags [visit](https://hub.docker.com/r/ceph/daemon-base/tags/).
 For the daemon tags [visit](https://hub.docker.com/r/ceph/daemon/tags/).
 
@@ -56,6 +57,7 @@ This is only available on centos with the following command :
 Core Components
 ---------------
 
+- [`ceph/client`](src/client/): Base container image containing Ceph client components.
 - [`ceph/daemon-base`](src/daemon-base/): Base container image containing Ceph core components.
 - [`ceph/daemon`](src/daemon/): All-in-one container containing all Ceph daemons.
 
